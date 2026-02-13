@@ -132,11 +132,11 @@ The application will be available at: **<http://localhost:8000>**
 ## Summary of Management Files
 
 | File | Purpose |
-|------|---------|
+| :--- | :--- |
 | `test_db.py` | Test PostgreSQL connection and show diagnostics |
 | `init_db.py` | Create all database tables |
 | `seed_db.py` | Populate database with sample data |
-| `reset_database.py`| Drops all tables and re-initializes (CAUTION) |
+| `reset_database.py` | Drops all tables and re-initializes (CAUTION) |
 
 ---
 

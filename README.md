@@ -29,11 +29,13 @@ A web-based automated timetable scheduling system built with FastHTML and Fastst
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    cd Final-Year
    ```
 
 2. **Create virtual environment**
+
    ```bash
    python -m venv .venv
    # Windows
@@ -43,11 +45,13 @@ A web-based automated timetable scheduling system built with FastHTML and Fastst
    ```
 
 3. **Install dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Configure environment**
+
    ```bash
    # Copy .env.example to .env
    copy .env.example .env  # Windows
@@ -60,6 +64,7 @@ A web-based automated timetable scheduling system built with FastHTML and Fastst
    ```
 
 5. **Initialize database**
+
    ```bash
    # The database will be created automatically on first run
    # For PostgreSQL, create the database first:
@@ -67,6 +72,7 @@ A web-based automated timetable scheduling system built with FastHTML and Fastst
    ```
 
 6. **Seed sample data** (optional)
+
    ```bash
    python seed_db.py
    ```
@@ -87,7 +93,7 @@ The application will be available at `http://localhost:8000`
 
 ## Project Structure
 
-```
+```text
 Final-Year/
 ├── main.py                      # Application entry point
 ├── seed_db.py                   # Database seeding script
@@ -106,19 +112,16 @@ Final-Year/
 
 ## Development Status
 
-### ✅ Completed (Phase 1-2)
+### ✅ Completed
+
 - Project structure and configuration
 - Database models with relationships
 - PostgreSQL/SQLite database connection
 - JWT authentication utilities
 - Custom Faststrap theme
 - Seed data script
-
-### 🚧 In Progress (Phase 3)
 - Authentication system (login/logout)
 - Dashboard and UI components
-
-### 📋 Planned
 - CRUD operations for courses, lecturers, venues
 - CSP-based scheduling algorithm
 - Timetable generation and viewing
