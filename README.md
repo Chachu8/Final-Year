@@ -674,7 +674,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 👥 Authors
 
 - **Olorundare Micheal** - *Initial work & Main Developer*
-- **Asuku David** - *Project Owner*
+- **Asuku Anavaami** - *Project Owner*
 
 ---
 
