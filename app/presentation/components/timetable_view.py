@@ -54,14 +54,29 @@ def CourseCard(entry: TimetableEntry, readonly: bool = False):
         style=f"transition: transform 0.2s; {'cursor: pointer;' if not readonly else ''}"
     )
 
-    # Add interactivity if not readonly
+    
+    # Build card with proper HTMX attributes if not readonly
     if not readonly:
-        card_content.attrs["data_bs_toggle"] = "modal"
-        card_content.attrs["data_bs_target"] = "#editEntryModal"
-        card_content.attrs["hx_get"] = f"/timetable/entry/{entry.id}"
-        card_content.attrs["hx_target"] = "#edit-entry-content"
-        
-    return card_content
+        return Div(
+            Div(
+                Div(
+                    H2(entry.course.code, cls="h6 fw-bold mb-1"),
+                    venue_display,
+                    cls="d-flex justify-content-between align-items-center"
+                ),
+                Badge(entry.course.department, bg="white", text=color, cls="border"),
+                *extras,
+                cls="card-body p-2 position-relative"
+            ),
+            cls=f"card bg-{color} text-white shadow-sm mb-1 clickable-card",
+            style="transition: transform 0.2s; cursor: pointer;",
+            data_bs_toggle="modal",
+            data_bs_target="#editEntryModal",
+            hx_get=f"/timetable/entry/{entry.id}",
+            hx_target="#edit-entry-content"
+        )
+    else:
+        return card_content
 
 def TimetableGrid(data: dict, readonly: bool = False):
     """Render the main timetable grid table."""

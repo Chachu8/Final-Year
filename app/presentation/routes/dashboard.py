@@ -137,7 +137,7 @@ def _build_dashboard_alerts(db):
     # Group by venue and time slot
     venue_time_map = {}
     for entry in entries:
-        key = (entry.venue_id, entry.time_slot_id, entry.day)
+        key = (entry.venue_id, entry.timeslot_id, entry.timeslot.day.value)
         if key not in venue_time_map:
             venue_time_map[key] = []
         venue_time_map[key].append(entry)
@@ -146,10 +146,10 @@ def _build_dashboard_alerts(db):
     for key, entries_list in venue_time_map.items():
         if len(entries_list) > 1:
             venue = entries_list[0].venue
-            time_slot = entries_list[0].time_slot
-            day = entries_list[0].day
+            time_slot = entries_list[0].timeslot
+            day = time_slot.day.value
             courses = ", ".join([e.course.code for e in entries_list])
-            conflicts.append(f"Venue conflict: {venue.name} double-booked on {day} {time_slot.start_time}-{time_slot.end_time} ({courses})")
+            conflicts.append(f"Venue conflict: {venue.name} double-booked on {day} {time_slot.start_time.strftime('%H:%M')}-{time_slot.end_time.strftime('%H:%M')} ({courses})")
     
     # Check for unassigned venues
     unassigned_count = db.query(func.count(TimetableEntry.id)).filter(

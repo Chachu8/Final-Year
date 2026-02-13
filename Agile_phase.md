@@ -122,3 +122,6 @@ Phase 14: Navigation & PDF Export (Complete)
  PDF: Implement /timetable/export-pdf route.
  PDF: Wire up existing "Export PDF" button.
  PDF: Add "Download PDF" to student portal.
+
+Comment
+Ctrl+Alt+M

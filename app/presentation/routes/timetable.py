@@ -763,7 +763,8 @@ def timetable_routes(app):
                 data_bs_toggle="tooltip",
                 title="Unlock manual edits",
                 hx_post="/timetable/restore",
-                hx_swap="none"
+                hx_swap="none",
+                hx_confirm="Are you sure you want to unlock all manual edits? This will restore entries to their originally generated state."
             ),
             
             active_page="timetable",
