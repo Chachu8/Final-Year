@@ -1,0 +1,12 @@
+python-fasthtml
+faststrap>=0.5.3
+sqlalchemy>=2.0.25
+psycopg2-binary>=2.9.9
+python-jose[cryptography]
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+python-constraint>=1.4.0
+reportlab>=4.0.0
+pandas>=2.1.0
+openpyxl>=3.1.0
